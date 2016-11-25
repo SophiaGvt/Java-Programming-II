@@ -12,7 +12,7 @@ public class GetInput {
 		System.out.println("Enter search term: ");
         	input = sNew.nextLine();
     	}
-		public String getTerm() {
-    	   	return input;
-		}
+	public String getTerm() {
+    		return input;
+	}
 }
