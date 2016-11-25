@@ -6,13 +6,13 @@ import java.util.Scanner;
  */
 public class GetInput {
 	private Scanner sNew = new Scanner(System.in);
-    private String input;
+	private String input;
 
-		public void promptTerm() {
-			System.out.println("Enter search term: ");
+	public void promptTerm() {
+		System.out.println("Enter search term: ");
         	input = sNew.nextLine();
     	}
 		public String getTerm() {
-    	    return input;
+    	   	return input;
 		}
 }
