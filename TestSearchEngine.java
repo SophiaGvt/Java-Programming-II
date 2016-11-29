@@ -9,11 +9,11 @@ public class TestSearchEngine {
 
 
 			System.out.println("Enter search words:");
-			String searchWord = input.next();
+			String searchWord = input.nextLine();
 
 			//sql looking for proper results
 
-			while(input.next()) {
+			while(input.hasNext()) {
 				System.out.println(+ input.getString("//database"));
 			}
 		}
