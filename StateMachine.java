@@ -9,7 +9,7 @@ public class StateMachine {
 		InputStreamReader filehtml = new  InputStreamReader(a, "");
 	} 
 	catch (FileNotFoundException e) {
-		System.err.println("Unable to open file ");
+		System.err.println("Unable to open file " + e.getMessage());
 		System.exit(1);
 	}
 	public void inTag() {
