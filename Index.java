@@ -1,33 +1,44 @@
+import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
 import java.util.Hashtable; 
 import java.util.ArrayList;
 
 public class Index {
-	Map <String, ArrayList <URL>> sUrl;
-	Map <String, ArrayList <int>> sTimes;
+	Map <String, ArrayList <Posting<URL, Integer>>> myMap;
 	
-	public void createIndex () {//παιρνει ως ορισμα το αρχειο html
-		 sUrl = new Hashtable <String, ArrayList <URL>>();
-		 sTimes = new HashTable <String, ArrayList<int>>();
-		
-		//εδω χωριζει τις λεξεις με τη split και θα τις αποθηκευει σε πινακα
-		int times = 0;
-		for (String token : tokens) {
+	
+	@SuppressWarnings("deprecation")
+	public void createIndex (File filehtml) {
+		 myMap = new Hashtable <String, ArrayList <Posting<URL, Integer>>>();
+				
+		//@SuppressWarnings("deprecation") 
+		//try {
+		Posting<URL, Integer> posting;		
+		posting = new Posting<URL, Integer>(filehtml.toURL(),0);
+
+		//εδω η split θα βγαζει ενα πινακα απο token
+		String[] tokens;
+		Integer times = 0;
+		for(String token : tokens){
 			
-			sUrl.put(token, URL);
-			if (sUrl.containsKey(token)) {
+			if (myMap.containsKey(token)) {
 				times++;
-				sTimes.put(token, times);
-										
+				posting.setI(times);
+				
 			} else {
-				sTimes.put(token, 1);
-								
+				//times = 1;
+				posting.setI(1);
+				//myMap.put(token, posting);
 			}
+			myMap.put(token, posting);
+			
 		}
-	
-	
+		Sorting.sortedMap(myMap);
 		
+		
+				
 	}
 
 }
