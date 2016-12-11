@@ -6,13 +6,16 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Sorting {
-	public static void sortedMaps (Map <String, ArrayList <URL>> map1, Map <String, ArrayList <int>> map2) {
+	
+	
+	public static void sortedMap(
+			Map<String, ArrayList<Posting<URL, Integer>>> myMap) {
 		
-		Set<String> keys1 = map1.keySet();
-		HashSet<String> sortedKeys1 = new HashSet<>(keys1); 
+		Set<String> keys = myMap.keySet();
+		HashSet<String> sortedKeys = new HashSet<>(keys); 
 		
-		Set<String> keys2 = map2.keySet();
-		HashSet<String> sortedKeys2 = new HashSet<>(keys2); 
 	}
 
+	
 }
+
