@@ -3,7 +3,7 @@ package searchengine;
 import java.util.Scanner;
 
 /**
- * Class with method that gets String input from user.
+ * Class with method that gets String input from user
  * Assigns input's value to variable.
  * With get method for that variable.
  */
