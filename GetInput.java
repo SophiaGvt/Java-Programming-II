@@ -1,18 +1,23 @@
+package searchengine;
+
 import java.util.Scanner;
+
 /**
  * Class with method that gets String input from user.
  * Assigns input's value to variable.
- * And also contains get method for that variable.
+ * With get method for that variable.
  */
+
 public class GetInput {
-	private Scanner sNew = new Scanner(System.in);
+	private Scanner scanner = new Scanner(System.in);
 	private String input;
 
 	public void promptTerm() {
 		System.out.println("Enter search term: ");
-        	input = sNew.nextLine();
+        	input = scanner.nextLine();
     	}
-	public String getTerm() {
+	
+	public String getInputTerm() {
     		return input;
 	}
 }
