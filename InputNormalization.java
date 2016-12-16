@@ -3,7 +3,7 @@ package searchengine;
 import java.text.Normalizer;
 
 /**
- * Class with method that normalizes user's input.
+ * Class with method that normalizes user's input
  * With get method for access to normalized input.
  */
 
@@ -15,7 +15,7 @@ public class InputNormalization {
   //normalize input term
   public void normalizeInputTerm() {
     inputTerm = Normalizer.normalize(inputTerm, Normalizer.Form.NFD)
-    .toLowerCase().replaceAll("[^a-z·-˘A-Z¡-Ÿ0-9 ]", "");
+    .toLowerCase().replaceAll("[^a-z√°-√πA-Z√Å-√ô0-9 ]", "");
   }
 
   public String getNormalizedInputTerm() {
