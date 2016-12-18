@@ -15,7 +15,7 @@ public class InputNormalization {
   //normalize input term
   public void normalizeInputTerm() {
     inputTerm = Normalizer.normalize(inputTerm, Normalizer.Form.NFD)
-    .toLowerCase().replaceAll("[^a-zá-ùA-ZÁ-Ù0-9 ]", "");
+    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
   }
 
   public String getNormalizedInputTerm() {
