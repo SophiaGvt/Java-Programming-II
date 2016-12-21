@@ -3,10 +3,11 @@ import java.io.*;
 
 public class GetText {
 	public static void main(String args[]) {
-		File file = new File("C:\\Users\\emalliari\\Desktop\\" + "nba-power-rankings-marc-stein-week-8-rankings.htm");
+		File file = new File("C:\\Users\\emalliari\\Desktop\\" + "Basketball.htm");
 		Pattern cre = null;        // Compiled RE
         try {
-            cre = Pattern.compile("strong");
+        	cre = Pattern.compile("<p>");
+
         } catch (PatternSyntaxException e) {
             System.err.println("Invalid RE syntax: " + e.getDescription());
 
@@ -24,6 +25,10 @@ public class GetText {
             String s;
             while ((s = in.readLine()) != null) {
                 Matcher m = cre.matcher(s);
+
+                s = s.replaceAll("<p>","");
+                s = s.replaceAll("</p>","");
+                s = s.replaceAll("<a href=.*?>", "");
                 if (m.find())
                     System.out.println(s);
             }
