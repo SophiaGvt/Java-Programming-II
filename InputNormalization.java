@@ -3,8 +3,7 @@ package searchengine;
 import java.text.Normalizer;
 
 /**
- * Class with method that normalizes user's input
- * With get method for access to normalized input.
+ * Class that normalizes strings.
  */
 
 //create an object of GetInput class, to call the getInputTerm method.
@@ -17,7 +16,19 @@ public class InputNormalization {
     inputTerm = Normalizer.normalize(inputTerm, Normalizer.Form.NFD)
     .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
   }
-
+  
+  /**(new) method that normalizes a String
+   * @param str input String to normalize.
+   * @return String[] wordList that contains all the words. 
+   */
+  public String[] normalizedStringArr(String str) {
+    str = Normalizer.normalize(str, Normalizer.Form.NFD)
+    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
+    String[] wordList = str.split("\\s+");
+    return wordList;
+  }
+  
+  //get normalized input term.
   public String getNormalizedInputTerm() {
     return this.inputTerm;
   }
