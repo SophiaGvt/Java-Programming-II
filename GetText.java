@@ -1,55 +1,62 @@
+package searchEngine;
+
 import java.util.regex.*;
 import java.io.*;
 
 public class GetText {
-	public static void main(String args[]) {
-		File file = new File("C:\\Users\\emalliari\\Desktop\\Basketball.htm");
-		Pattern cre = null;        // Compiled RE
-        try {
-        	cre = Pattern.compile("<p>");
+	   //public static void main(String args[]) {
+	   public void getText(String path) {
+		File file = new File(path); //"C:\\Users\\sgavioti\\Desktop\\view-source_https___en.wikipedia.org_wiki_2016_San_Pablito_Market_fireworks_explosion.html");
+		Pattern cre1 = null;
 
-        } catch (PatternSyntaxException e) {
-            System.err.println("Invalid RE syntax: " + e.getDescription());
+		try {
+			cre1 = Pattern.compile("<p>|<title>.*?</title>|<br />");
 
-        }
+		} catch (PatternSyntaxException e) {
+			System.err.println("Invalid RE syntax: " + e.getDescription());
 
-        BufferedReader in = null;
-        try {
-            in = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-        } catch (FileNotFoundException e) {
-            System.err.println("Unable to open file " + ": " + e.getMessage());
+		}
 
-        }
+		BufferedReader in = null;
+		try {
+			in = new BufferedReader(new InputStreamReader(new FileInputStream(
+					file)));
+		} catch (FileNotFoundException e) {
+			System.err.println("Unable to open file " + ": " + e.getMessage());
 
-        try {
-            String s;
-            while ((s = in.readLine()) != null) {
-            	//System.out.println(s); 
-                Matcher m = cre.matcher(s);
+		}
+		String sumLine = "";
+		String line = "";
+		try {
+			
+			while ((line = in.readLine()) != null) {
 
-                s = s.replaceAll("<p>","");
-                s = s.replaceAll("</p>","");
-                s = s.replaceAll("<a href=.*?>", "");
-                s = s.replaceAll("</a>","");
-                s = s.replaceAll("<b>","");
-                s = s.replaceAll("</b>","");
-                s = s.replaceAll("<sup.*?</sup>", "");
-                s = s.replaceAll("–","");
-                s = s.replaceAll("&#.*;","");
-                s = s.replaceAll("<i>","");
-                s = s.replaceAll("</i>","");
-                s = s.replaceAll("<span>.*?</span>","");
-                
-                
-                //System.out.println(s);
-                if (m.find()){
-                    System.out.println(s);
-                    //System.exit(1);
-                }
-            }
-        } catch (Exception e) {
-            System.err.println("Error reading line: " + e.getMessage());
+				Matcher m1 = cre1.matcher(line);
 
-        }
-    }
+				line = line.replaceAll("β€.", "");
+				line = line.replaceAll("&.*?;", "");
+				line = line.replaceAll("<script.*(</script>)?", " ");
+				line = line.replaceAll("<.*?>", " ");
+
+				if (m1.find()) {
+					sumLine += line;
+					//System.out.println(line);
+				}
+			}
+			 
+		} catch (Exception e) {
+			System.err.println("Error reading line: " + e.getMessage());
+
+		}
+		
+		try {
+		in.close();
+		
+		} catch (IOException e) {
+			System.err.println("Error closing file: " + e.getMessage());
+		}
+		
+		//return sumLine;
+		System.out.println(sumLine);
+	}
 }
