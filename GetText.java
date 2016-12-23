@@ -4,9 +4,9 @@ import java.util.regex.*;
 import java.io.*;
 
 public class GetText {
-	   //public static void main(String args[]) {
+	  
 	   public String getText(String path) {
-		File file = new File(path); //"C:\\Users\\sgavioti\\Desktop\\view-source_https___en.wikipedia.org_wiki_2016_San_Pablito_Market_fireworks_explosion.html");
+		File file = new File(path); 
 		Pattern cre1 = null;
 
 		try {
@@ -56,6 +56,6 @@ public class GetText {
 		}
 		
 		return sumLine;
-		//System.out.println(sumLine);
+		
 	}
 }
