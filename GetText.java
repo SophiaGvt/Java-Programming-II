@@ -5,7 +5,7 @@ import java.io.*;
 
 public class GetText {
 	   //public static void main(String args[]) {
-	   public void getText(String path) {
+	   public String getText(String path) {
 		File file = new File(path); //"C:\\Users\\sgavioti\\Desktop\\view-source_https___en.wikipedia.org_wiki_2016_San_Pablito_Market_fireworks_explosion.html");
 		Pattern cre1 = null;
 
@@ -40,7 +40,6 @@ public class GetText {
 
 				if (m1.find()) {
 					sumLine += line;
-					//System.out.println(line);
 				}
 			}
 			 
@@ -56,7 +55,7 @@ public class GetText {
 			System.err.println("Error closing file: " + e.getMessage());
 		}
 		
-		//return sumLine;
-		System.out.println(sumLine);
+		return sumLine;
+		//System.out.println(sumLine);
 	}
 }
