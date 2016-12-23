@@ -21,10 +21,11 @@ public class InputNormalization {
    * @param str input String to normalize.
    * @return String[] wordList that contains all the words. 
    */
-  public String[] normalizedStringArr(String str) {
-    str = Normalizer.normalize(str, Normalizer.Form.NFD)
+  public static String[] normalizedStringArr(String str) {
+    String nstr;
+    nstr = Normalizer.normalize(str, Normalizer.Form.NFD)
     .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
-    String[] wordList = str.split("\\s+");
+    String[] wordList = nstr.split("\\s+");
     return wordList;
   }
   
