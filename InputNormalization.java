@@ -24,7 +24,7 @@ public class InputNormalization {
   public static String[] normalizedStringArr(String str) {
     String nstr;
     nstr = Normalizer.normalize(str, Normalizer.Form.NFD)
-    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
+    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", " ");
     String[] wordList = nstr.split("\\s+");
     return wordList;
   }
