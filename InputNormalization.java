@@ -14,7 +14,7 @@ public class InputNormalization {
   //normalize input term
   public void normalizeInputTerm() {
     inputTerm = Normalizer.normalize(inputTerm, Normalizer.Form.NFD)
-    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
+                .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", "");
   }
   
   /**(new) method that normalizes a String
@@ -22,10 +22,9 @@ public class InputNormalization {
    * @return String[] wordList that contains all the words. 
    */
   public static String[] normalizedStringArr(String str) {
-    String nstr;
-    nstr = Normalizer.normalize(str, Normalizer.Form.NFD)
-    .toLowerCase().replaceAll("[^a-zα-ωA-ZΑ-Ω0-9 ]", " ");
-    String[] wordList = nstr.split("\\s+");
+    str = Normalizer.normalize(str, Normalizer.Form.NFD)
+          .toLowerCase().replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+    String[] wordList = str.split("[^a-zα-ω0-9]+");
     return wordList;
   }
   
