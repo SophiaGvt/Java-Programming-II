@@ -7,17 +7,16 @@ import java.util.Scanner;
  * Assigns input's value to variable.
  * With get method for that variable.
  */
-
 public class GetInput {
 	private Scanner scanner = new Scanner(System.in);
-	private String input;
+	private static String input;
 
-	public void promptTerm() {
+	public static void promptTerm() {
 		System.out.println("Enter search term: ");
         	input = scanner.nextLine();
     	}
 	
-	public String getInputTerm() {
-    		return input;
+	public static String getInputTerm() {
+    		return GetInput.input;
 	}
 }
