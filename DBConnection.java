@@ -35,7 +35,9 @@ public class DBConnection {
 				String path = rs.getString("paths");
 				url = rs.getString("url");
 				GetText text = new GetText();
-				text.getText(path); 
+				String s = text.getText(path); 
+				Normalization norm = new Normalization();
+				String[] nwl = norm.textNormalization(s);
 				
 			}
 			
@@ -49,8 +51,8 @@ public class DBConnection {
 		}
 	}
 	
-	public String getUrl() {
-		return url;
-	}
+	//public String getUrl() {
+	//	return url;
+	//}
 	
 }
