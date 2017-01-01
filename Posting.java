@@ -1,19 +1,21 @@
-import java.net.URL;
-
-
 
 @SuppressWarnings("hiding")
-public class Posting<URL, Integer> {
-	private URL url;
+public class Posting<String, Integer> {
+	private String url;
 	private Integer i;
 
-	public Posting (URL url, Integer i) {
+	public Posting (String url, Integer i) {
 		
 		this.url = url;
 		this.i = i;
 	}
 	
-	public URL getUrl() {
+	public void setUrl(String url) {
+		
+		this.url = url;
+	}
+	
+	public String getUrl() {
 		
 		return this.url;
 	}
@@ -26,4 +28,9 @@ public class Posting<URL, Integer> {
 		
 		this.i = i;
 	}
+	public java.lang.String toString() {
+		return "(" + url.toString() + ", " + i.toString() + ")";
+	}
+	
+
 }
