@@ -46,4 +46,63 @@ public class HashtoArray {
 		}
 		
 	}
+		/**
+	 * Binary Search for ArrayList
+	 */
+	private final static int NOT_FOUND = -1;
+	
+	 public static int binarySearch(ArrayList<String> column_1, String input) {
+
+	        int low = 0;
+	        int high = column_1.size() - 1;
+	        int mid = (low + high) / 2;
+
+	        while (low <= high && !column_1.get(mid).equalsIgnoreCase(input)) {
+
+	            if (column_1.get(mid).compareTo(input) < 0) {
+	                low = mid + 1;
+	            } else {
+	                high = mid - 1;
+	            }
+
+	            mid = (low + high) / 2;
+
+	            if (low > high) {
+	                mid = NOT_FOUND;
+	            }
+
+	        }
+	        return mid;
+
+	    }
+
+	/**
+	 * Binary Search for ArrayList
+	 */
+	private final static int NOT_FOUND = -1;
+	
+	 public static int binarySearch(ArrayList<String> column_1, String input) {
+
+	        int low = 0;
+	        int high = column_1.size() - 1;
+	        int mid = (low + high) / 2;
+
+	        while (low <= high && !column_1.get(mid).equalsIgnoreCase(input)) {
+
+	            if (column_1.get(mid).compareTo(input) < 0) {
+	                low = mid + 1;
+	            } else {
+	                high = mid - 1;
+	            }
+
+	            mid = (low + high) / 2;
+
+	            if (low > high) {
+	                mid = NOT_FOUND;
+	            }
+
+	        }
+	        return mid;
+
+	    }
 }
