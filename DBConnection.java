@@ -1,9 +1,20 @@
 import java.sql.*;
-
+/**
+ * 
+ * @author SophiaGvt, evmall, ChElisavet
+ *
+ */
 public class DBConnection {
 
 	String url;
-	
+	/**
+	 * Connect to the database and creates an index of words existing in the webpages of the base
+	 * 
+	 * @param dbname: the name of the database
+	 * @param user: the username
+	 * @param password: the database passward
+	 * @throws Exception
+	 */
 	public void connection(String dbname, String user, String password)
 			throws Exception {
 		
