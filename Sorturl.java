@@ -40,9 +40,8 @@ public class Sorturl {
 		
 		ArrayList<Posting<String, Integer>> column_2 = new ArrayList<Posting<String, Integer>>();
 		
-		String fileName = null;
 		int place = 0;			// counts in which place is the value
-		for(ArrayList value : reind.readIndex(fileName).values()) {
+		for(ArrayList value : reind.readIndex().values()) {
 			
 			place = place + 1;
 			
