@@ -28,10 +28,10 @@ public class HashtoArray {
 	}
 	
 	/**
-	 * convert Hashmap to ArrayList
+	 * convert myMap to ArrayList
 	 */
 	
-	public void h_t_a () {
+	public ArrayList<String> h_t_a () {
 		
 		
 		 // Create object of class RestoreIndex
@@ -45,6 +45,7 @@ public class HashtoArray {
 			column_1.add(key);
 		}
 		
+		return column_1;
 	}
 	
 	/**
