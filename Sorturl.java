@@ -77,4 +77,56 @@ public class Sorturl {
 			return arlist_str;
 	}
 	
+	/**
+	 * Convert Posting<String,Integer> to ArrayList<Integer>
+	 */
+	
+	public ArrayList<Integer>  convert_int(ArrayList<Posting<String, Integer>> column_2) {
+		
+		ArrayList<Integer> arlist_int = new ArrayList<Integer>();
+		post = new Posting<String, Integer>();
+		int size = column_2.size();
+		
+		for(int i = 0; i < size; i++) {
+			
+			arlist_int.add(post.getI());
+			
+		}
+		
+		return arlist_int;
+	}
+		
+	
+	public static ArrayList<String> sort(ArrayList<String> convert_str, ArrayList<Integer> convert_int) {
+		
+		int size = convert_str.size() ;
+		
+		if(size <= 1) {
+			
+			return convert_str;
+		}
+		
+		for(int i =0; i < size; i++) {
+			
+			int t1 = convert_int.get(i);
+			int t2 = convert_int.get(i+1);
+			
+			if(t1 <= t2) {
+				
+				convert_int.set(i,t2);
+				convert_int.set(i+1,t1);
+				
+				String t3 = convert_str.get(i);
+				String t4 = convert_str.get(i+1);
+				
+				convert_str.set(i,t4);
+				convert_str.set(i+1,t3);
+			}	
+			
+		}
+		
+		return convert_str;
+	}
+
 }
+
