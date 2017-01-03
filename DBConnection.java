@@ -1,5 +1,3 @@
-package searchEngine;
-
 import java.sql.*;
 
 public class DBConnection {
@@ -34,11 +32,14 @@ public class DBConnection {
 			while (rs.next()) {
 				String path = rs.getString("paths");
 				url = rs.getString("url");
+				
 				GetText text = new GetText();
 				String s = text.getText(path); 
-				Normalization norm = new Normalization();
-				String[] nwl = norm.textNormalization(s);
 				
+				String[] nwl = Normalization.textNormalization(s);
+				
+				Index index = new Index();
+				index.createIndex(url, nwl);
 			}
 			
 			rs.close();
