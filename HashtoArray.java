@@ -39,8 +39,7 @@ public class HashtoArray {
 		
 		ArrayList<String> column_1 = new ArrayList<String>();
 		
-		String fileName = null;
-		for(String key : ind.readIndex(fileName).keySet()) {
+		for(String key : ind.readIndex().keySet()) {
 			
 			column_1.add(key);
 		}
