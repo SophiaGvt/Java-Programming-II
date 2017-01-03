@@ -2,14 +2,15 @@ import java.util.regex.*;
 import java.io.*;
 /**
  * 
- * @author Sophie, evmall
+ * @author evmall, SophiaGvt
  *
  */
 public class GetText {
 	  /**
-	   * 
+	   * Enters the html source code and keeps the clear text, removing the tags and anything unnecessary
+	   *
 	   * @param path of the html file
-	   * @return the clear text from the webpage
+	   * @return sumline: the text from the webpage
 	   */
 	   public String getText(String path) {
 		File file = new File(path); 
