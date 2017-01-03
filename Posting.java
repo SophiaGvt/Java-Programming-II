@@ -3,6 +3,10 @@
 public class Posting<String, Integer> {
 	private String url;
 	private Integer i;
+	
+	public Posting () {
+		
+	}
 
 	public Posting (String url, Integer i) {
 		
