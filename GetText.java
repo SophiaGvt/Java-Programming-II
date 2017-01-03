@@ -1,10 +1,16 @@
-package searchEngine;
-
 import java.util.regex.*;
 import java.io.*;
-
+/**
+ * 
+ * @author Sophie, evmall
+ *
+ */
 public class GetText {
-	  
+	  /**
+	   * 
+	   * @param path of the html file
+	   * @return the clear text from the webpage
+	   */
 	   public String getText(String path) {
 		File file = new File(path); 
 		Pattern cre1 = null;
@@ -27,6 +33,7 @@ public class GetText {
 		}
 		String sumLine = "";
 		String line = "";
+		
 		try {
 			
 			while ((line = in.readLine()) != null) {
