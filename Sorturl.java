@@ -41,7 +41,7 @@ public class Sorturl {
 		ArrayList<Posting<String, Integer>> column_2 = new ArrayList<Posting<String, Integer>>();
 		
 		int place = 0;			// counts in which place is the value
-		for(ArrayList value : reind.readIndex().values()) {
+		for(ArrayList<Posting<String, Integer>> value : reind.readIndex().values()) {
 			
 			place = place + 1;
 			
