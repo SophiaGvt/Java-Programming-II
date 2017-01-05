@@ -2,8 +2,6 @@
  * @authors mmavreli, ptaniou
  */
 
-package searchengine;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,15 +13,15 @@ public class HashtoArray {
 	 */
 
 	private Scanner scanner = new Scanner(System.in);
-	private String input;
+	static String input;
 	
 
 	public void inputTerm() {
-		System.out.println("Enter search term: ");
+		System.out.print("Enter search term: ");
 		input = scanner.nextLine();
 	}
 
-	public String getInputTerm() {
+	public static String getInputTerm() {
 		return input;
 	}
 	
@@ -52,7 +50,7 @@ public class HashtoArray {
 	 */
 	private final static int NOT_FOUND = -1;
 	
-	 public static int binarySearch(ArrayList<String> column_1, String input) {
+	 public int binarySearch(ArrayList<String> column_1, String input) {
 
 	        int low = 0;
 	        int high = column_1.size() - 1;
