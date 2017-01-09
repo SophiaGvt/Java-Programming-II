@@ -3,10 +3,9 @@ package javengers;
 import java.util.regex.*;
 import java.io.*;
 
-public class GetText {
-	
-	   public String getText(String path) {
-		File file = new File(path);
+public class GetTextMain {
+	public static void main(String args[]) {
+		File file = new File("C:\\Users\\sgavioti\\Desktop\\view-source_euroleague.sport24.gr_article_4446331_o-olympiakos-exase-thn-eykairia.html");
 		Pattern cre1 = null;
 
 		try {
@@ -57,6 +56,8 @@ public class GetText {
 			System.err.println("Error closing file: " + e.getMessage());
 		}
 		
-		return sumLine;
+		
+		System.out.println(sumLine);
 	}
-}
+
+	}
