@@ -1,4 +1,4 @@
-
+ο»Ώ
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -6,8 +6,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Κλάση για ταξινόμηση των κλειδιών του Map απο την Index
- * με στατικό πεδίο το Set με τα κλειδιά που προκύπτουν από την μέθοδο sortedMap
+ * ΞΞ»Ξ¬ΟƒΞ· Ξ³ΞΉΞ± Ο„Ξ±ΞΎΞΉΞ½ΟΞΌΞ·ΟƒΞ· Ο„Ο‰Ξ½ ΞΊΞ»ΞµΞΉΞ΄ΞΉΟΞ½ Ο„ΞΏΟ… Map Ξ±Ο€ΞΏ Ο„Ξ·Ξ½ Index
+ * ΞΌΞµ ΟƒΟ„Ξ±Ο„ΞΉΞΊΟ Ο€ΞµΞ΄Ξ―ΞΏ Ο„ΞΏ Set ΞΌΞµ Ο„Ξ± ΞΊΞ»ΞµΞΉΞ΄ΞΉΞ¬ Ο€ΞΏΟ… Ο€ΟΞΏΞΊΟΟ€Ο„ΞΏΟ…Ξ½ Ξ±Ο€Ο Ο„Ξ·Ξ½ ΞΌΞ­ΞΈΞΏΞ΄ΞΏ sortedMap
  * @author amitsa
  *
  */
@@ -17,7 +17,7 @@ public class Sorting {
 	
 	static TreeSet<String> sortedKeys;
 	/**
-	 * Μέθοδος που δέχεται ένα map και δημιουργεί ένα Set απο sortedKeys
+	 * ΞΞ­ΞΈΞΏΞ΄ΞΏΟ‚ Ο€ΞΏΟ… Ξ΄Ξ­Ο‡ΞµΟ„Ξ±ΞΉ Ξ­Ξ½Ξ± map ΞΊΞ±ΞΉ Ξ΄Ξ·ΞΌΞΉΞΏΟ…ΟΞ³ΞµΞ― Ξ­Ξ½Ξ± Set Ξ±Ο€ΞΏ sortedKeys
 	 * @param myMap
 	 */
 	public static  void sortedMap(

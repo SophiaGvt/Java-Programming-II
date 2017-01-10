@@ -1,4 +1,4 @@
-import java.io.BufferedReader;
+ο»Ώimport java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class RestoreIndex {
 			         // open input stream myIndex.txt for reading purpose.
 			         br = new BufferedReader(new InputStreamReader(new FileInputStream(
 								file)));
-			         //διαβάζει γραμμή-γραμμή το αρχείο
+			         //Ξ΄ΞΉΞ±Ξ²Ξ¬Ξ¶ΞµΞΉ Ξ³ΟΞ±ΞΌΞΌΞ®-Ξ³ΟΞ±ΞΌΞΌΞ® Ο„ΞΏ Ξ±ΟΟ‡ΞµΞ―ΞΏ
 			         while ((thisLine = br.readLine()) != null) {//each line is a pair of key word and its posting list
 			        	 
 			        	 //1st split: first element is the term, second its posting list
@@ -70,7 +70,7 @@ public class RestoreIndex {
 						try {
 
 							if (br != null)
-								br.close();//κλείσιμο αρχείου
+								br.close();//ΞΊΞ»ΞµΞ―ΟƒΞΉΞΌΞΏ Ξ±ΟΟ‡ΞµΞ―ΞΏΟ…
 						
 
 						} catch (IOException ex) {
