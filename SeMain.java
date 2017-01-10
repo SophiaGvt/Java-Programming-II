@@ -46,7 +46,7 @@ public class SeMain {
 			
 				if (mid == i) {
 				
-					System.out.println(column_2.get(i).toString());
+					System.out.println(column_2.get(i));
 				
 				}
 			}
