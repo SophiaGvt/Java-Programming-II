@@ -1,12 +1,16 @@
-
+/**
+ * Παραμετρικός τύπος Posting χρησιμοποιείται για να δίνονται τιμές στις λέξεις
+ * του map
+ * @author amitsa
+ *
+ * @param <String> το url που παίρνουμε από τον crawler
+ * @param <Integer> πόσες φορές εμφανίζεται η λέξη μέσα στο αρχείο που δείχνει 
+ * το συγκεκριμένο url
+ */
 @SuppressWarnings("hiding")
 public class Posting<String, Integer> {
 	private String url;
 	private Integer i;
-	
-	public Posting () {
-		
-	}
 
 	public Posting (String url, Integer i) {
 		
@@ -32,6 +36,8 @@ public class Posting<String, Integer> {
 		
 		this.i = i;
 	}
+	
+	public Posting () {}
 	public java.lang.String toString() {
 		return "(" + url.toString() + ", " + i.toString() + ")";
 	}

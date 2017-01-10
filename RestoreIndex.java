@@ -1,11 +1,8 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
@@ -16,8 +13,11 @@ public class RestoreIndex {
 	 * 
 	 * This constructs our index file back in memory as a map view
 	 * to get used in the search
+	 * 
 	 */
-	//Map <String, ArrayList<Posting<String, Integer>>>
+	/**
+	 * @return a Map <String, ArrayList<Posting<String, Integer>>>
+	 */
 	public Map <String, ArrayList<Posting<String, Integer>>> readIndex() {
 		
 		String path = "C:\\Users\\amitsa\\Desktop\\java_programming_2\\Search Engine\\myIndex.txt";
@@ -40,7 +40,7 @@ public class RestoreIndex {
 			         // open input stream myIndex.txt for reading purpose.
 			         br = new BufferedReader(new InputStreamReader(new FileInputStream(
 								file)));
-			         
+			         //διαβάζει γραμμή-γραμμή το αρχείο
 			         while ((thisLine = br.readLine()) != null) {//each line is a pair of key word and its posting list
 			        	 
 			        	 //1st split: first element is the term, second its posting list
@@ -70,7 +70,7 @@ public class RestoreIndex {
 						try {
 
 							if (br != null)
-								br.close();
+								br.close();//κλείσιμο αρχείου
 						
 
 						} catch (IOException ex) {
