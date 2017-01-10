@@ -46,18 +46,23 @@ public class StopWordsRemoval {
       "τιποτα", "τιποτε", "τις", "το", "τοι", "τον","τος", "τοση", "τοσο", "τοσος", "του", "τους",
       "τουτη", "τουτο", "τουτος", "των", "υ", "υπερ", "υπο","φ", "χ", "χαρη", "χαριν", "χωρις",
       "ψ", "ω", "ως", "ωσοτου", "ωσπου", "ωστε", "ωστοσο" };
-
+    
+    // Initialize the collection
     LinkedList<String> newWordList = new LinkedList<String>(Arrays.asList(input));
-
+    // Create the iterator to iterate through the collection and call iterator.hasNext() method
     for (Iterator<String> iter = newWordList.iterator(); iter.hasNext();) {
+      // Create String variable to store each word for comparison
       String word = iter.next();
+      // Compare each word with all the stop words
       for (int i = 0; i < stopwords.length; i++) {
+        // If word is equal to any stop word
         if (word.equals(stopwords[i])) {
+          // remove it
           iter.remove();
         }
       }
     }
-    
+    // Create new String[] nwl that has newWordList.size() and populate it
     String[] nwl = newWordList.toArray(new String[newWordList.size()]);
     return nwl;
   }
