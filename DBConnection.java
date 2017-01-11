@@ -6,7 +6,6 @@ import java.sql.*;
  */
 public class DBConnection {
 
-	String url;
 	/**
 	 * Connect to the database and creates an index of words existing in the webpages of the base
 	 * 
@@ -42,15 +41,14 @@ public class DBConnection {
 			
 			while (rs.next()) {
 				String path = rs.getString("paths");
-				url = rs.getString("url");
+				String url = rs.getString("url");
 				
 				GetText text = new GetText();
 				String s = text.getText(path); 
 				
 				String[] nwl = Normalization.textNormalization(s);
-				
-				Index index = new Index();
-				index.createIndex(url, nwl);
+
+				Index.createIndex(url, nwl);
 			}
 			
 			rs.close();
