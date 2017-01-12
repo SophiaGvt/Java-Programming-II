@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.Hashtable;
 import java.util.ArrayList;
 /**
- * Κλάση Index για δημιουργία ευρετηρίου. Χρήση map για την αποθήκευση των λέξεων
- * κλειδιών.
+ * ΓΓ«ΓΓ³Γ§ Index Γ£Γ©Γ΅ Γ¤Γ§Γ¬Γ©Γ―ΓµΓ±Γ£ΓΓ΅ Γ¥ΓµΓ±Γ¥Γ΄Γ§Γ±ΓΓ―Γµ. Γ—Γ±ΓΓ³Γ§ map Γ£Γ©Γ΅ Γ΄Γ§Γ­ Γ΅Γ°Γ―Γ¨ΓΓªΓ¥ΓµΓ³Γ§ Γ΄ΓΉΓ­ Γ«ΓΓ®Γ¥ΓΉΓ­
+ * ΓªΓ«Γ¥Γ©Γ¤Γ©ΓΎΓ­.
  * @author amitsa
  *
  */
@@ -20,8 +20,8 @@ public class Index {
 
 /**
  *
- * @param url τα url που δέχεται από το crawler
- * @param tokens ο πίνακας από τις λέξεις που περιλαμβάνονται στο αρχείο με το αντίστοιχο url
+ * @param url Γ΄Γ΅ url Γ°Γ―Γµ Γ¤ΓΓ·Γ¥Γ΄Γ΅Γ© Γ΅Γ°ΓΌ Γ΄Γ― crawler
+ * @param tokens Γ― Γ°ΓΓ­Γ΅ΓªΓ΅Γ² Γ΅Γ°ΓΌ Γ΄Γ©Γ² Γ«ΓΓ®Γ¥Γ©Γ² Γ°Γ―Γµ Γ°Γ¥Γ±Γ©Γ«Γ΅Γ¬ΓΆΓΓ­Γ―Γ­Γ΄Γ΅Γ© Γ³Γ΄Γ― Γ΅Γ±Γ·Γ¥ΓΓ― Γ¬Γ¥ Γ΄Γ― Γ΅Γ­Γ΄ΓΓ³Γ΄Γ―Γ©Γ·Γ― url
  * @throws MalformedURLException
  */
 
@@ -38,17 +38,17 @@ public class Index {
 
 
 
-		for(String token : tokens){//πίνακας που προκύπτει απο την textNormalization
+		for(String token : tokens){//Γ°ΓΓ­Γ΅ΓªΓ΅Γ² Γ°Γ―Γµ Γ°Γ±Γ―ΓªΓ½Γ°Γ΄Γ¥Γ© Γ΅Γ°Γ― Γ΄Γ§Γ­ textNormalization
 
 			if (myMap.containsKey(token)) {
 
-					//έλεγχος περίπτωσης αν η λέξη υπάρχει στο url που ήδη
+					//ΓΓ«Γ¥Γ£Γ·Γ―Γ² Γ°Γ¥Γ±ΓΓ°Γ΄ΓΉΓ³Γ§Γ² Γ΅Γ­ Γ§ Γ«ΓΓ®Γ§ ΓµΓ°ΓΓ±Γ·Γ¥Γ© Γ³Γ΄Γ― url Γ°Γ―Γµ ΓΓ¤Γ§
 					myPosting = myMap.get(token).get(myMap.get(token).size()-1);
 
 					if(myPosting.getUrl().equals(url)) {
 						myPosting.setI(myPosting.getI()+1);
 
-					//έελγχος αν η λέξη edw einai h periptwsh poy yparxei h leksh alla se diaforetiko url
+					//ΓΓ¥Γ«Γ£Γ·Γ―Γ² Γ΅Γ­ Γ§ Γ«ΓΓ®Γ§ edw einai h periptwsh poy yparxei h leksh alla se diaforetiko url
 					} else {
 						posting = new Posting<String, Integer>(url,0);
 						posting.setI(1);
