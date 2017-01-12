@@ -63,8 +63,7 @@ public class SeMain {
 
 		if (mid == -1) {
 
-			System.out.println(" The word is not found.");
-
+			url.add("The word is not found");
 		} else {
 
 			HashtoArray ha = new HashtoArray();
@@ -78,8 +77,6 @@ public class SeMain {
 					url = su.getArUrl();
 					// ArrayList<Integer> frequency = su.getArInt();
 
-					// System.out.println(url);
-					// System.out.println(frequency);
 
 				}
 			}
