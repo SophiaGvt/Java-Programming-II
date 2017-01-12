@@ -61,8 +61,4 @@ public class DBConnection {
 		}
 	}
 	
-	//public String getUrl() {
-	//	return url;
-	//}
-	
 }
