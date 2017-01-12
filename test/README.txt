@@ -1,1 +1,1 @@
-Folder for junit tests.
+Folder for JUnit tests.
